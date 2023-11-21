@@ -10,13 +10,20 @@ import {
 import "./AramaCubugu.css";
 
 const AramaCubugu = (props) => {
+  const{search,setSearch}=props;
+  
+  const handleChange=(event)=>{
+    setSearch(event.target.value);
+  }
+  // const search=props.search;
+  // const setSearch=props.setSearch;
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Arama" />
+        <input type="text" placeholder="Arama" value={search} onChange={handleChange} />
       </form>
       <div className="social-wrapper">
         <div className="social">
